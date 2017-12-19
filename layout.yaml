@@ -1,0 +1,70 @@
+resource_registry:
+
+  OS::TripleO::Controller::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::Controller::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+  OS::TripleO::Controller::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::Controller::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt_from_pool.yaml
+
+  OS::TripleO::OsdCompute::Ports::InternalApiPort: /usr/share/openstack-tripleo-heat-templates/network/ports/internal_api_from_pool.yaml
+  OS::TripleO::OsdCompute::Ports::TenantPort: /usr/share/openstack-tripleo-heat-templates/network/ports/tenant_from_pool.yaml
+  OS::TripleO::OsdCompute::Ports::StoragePort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_from_pool.yaml
+  OS::TripleO::OsdCompute::Ports::StorageMgmtPort: /usr/share/openstack-tripleo-heat-templates/network/ports/storage_mgmt_from_pool.yaml
+
+
+parameter_defaults:
+  NtpServer: 172.16.81.31
+  
+  ControllerCount: 1
+  ComputeCount: 0
+  CephStorageCount: 0
+  OsdComputeCount: 3
+
+  ControllerSchedulerHints:
+    'capabilities:node': 'controller-%index%'
+  NovaComputeSchedulerHints:
+    'capabilities:node': 'compute-%index%'
+  CephStorageSchedulerHints:
+    'capabilities:node': 'ceph-storage-%index%'
+  OsdComputeSchedulerHints:
+    'capabilities:node': 'osd-compute-%index%'
+
+  ControllerIPs:
+    internal_api:
+      - 172.17.0.200
+      #- 172.17.0.201
+      #- 172.17.0.202
+    tenant:
+      - 172.18.0.200
+      #- 172.18.0.201
+      #- 172.18.0.202
+    storage:
+      - 172.19.0.200      
+      #- 172.19.0.201
+      #- 172.19.0.202
+    storage_mgmt:
+      - 172.20.0.200      
+      #- 172.20.0.201
+      #- 172.20.0.202
+  
+  OsdComputeIPs:
+    internal_api:
+      - 172.17.0.203
+      - 172.17.0.204
+      - 172.17.0.205
+      #- 192.168.2.206      
+    tenant:
+      - 172.18.0.203
+      - 172.18.0.204
+      - 172.18.0.205
+      #- 192.168.3.206      
+    storage:
+      - 172.19.0.203      
+      - 172.19.0.204
+      - 172.19.0.205
+      #- 172.16.1.206
+    storage_mgmt:
+      - 172.20.0.203      
+      - 172.20.0.204
+      - 172.20.0.205
+      #- 172.16.2.206
+
