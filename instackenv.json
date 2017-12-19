@@ -1,0 +1,54 @@
+{
+    "nodes": [
+        {
+            "name":"S1E-2",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"admin",
+            "pm_password":"admin",
+            "pm_addr":"172.16.80.12",
+            "capabilities":"node:controller-0,boot_option:local"
+        },
+        {
+
+            "name":"S1E-3",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"admin",
+            "pm_password":"admin",
+            "pm_addr":"172.16.80.13",
+            "capabilities":"node:compute-0,boot_option:local"
+        },
+        {
+            "name":"S1E-4",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"admin",
+            "pm_password":"admin",
+            "pm_addr":"172.16.80.14",
+            "capabilities":"node:compute-1,boot_option:local"
+        },
+        {
+            "name":"S1E-6",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"admin",
+            "pm_password":"admin",
+            "pm_addr":"172.16.80.16",
+            "capabilities":"node:compute-2,boot_option:local"
+        },
+        {
+            "name":"S1E-7",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"admin",
+            "pm_password":"admin",
+            "pm_addr":"172.16.80.17",
+            "capabilities":"node:compute-3,boot_option:local"
+        },
+        {
+            "name":"S1E-8",
+            "pm_type":"pxe_ipmitool",
+            "pm_user":"admin",
+            "pm_password":"admin",
+            "pm_addr":"172.16.80.18",
+            "capabilities":"node:compute-4,boot_option:local"
+        }
+    ]
+}
+
