@@ -1,7 +1,8 @@
 resource_registry:
   OS::TripleO::OsdCompute::Net::SoftwareConfig: /home/stack/custom-templates/nic-configs/compute-nics.yaml
   OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/custom-templates/nic-configs/controller-nics.yaml
-
+  OS::TripleO::NodeUserData: /home/stack/custom-templates/chpasswd.yaml
+  
 parameter_defaults:
   NeutronBridgeMappings: 'datacentre:br-ex,tenant:br-tenant'
   NeutronNetworkType: 'vxlan'
