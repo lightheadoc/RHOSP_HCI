@@ -1,7 +1,7 @@
 resource_registry:
   OS::TripleO::OsdCompute::Net::SoftwareConfig: /home/stack/custom-templates/nic-configs/compute-nics.yaml
   OS::TripleO::Controller::Net::SoftwareConfig: /home/stack/custom-templates/nic-configs/controller-nics.yaml
-  OS::TripleO::NodeUserData: /home/stack/custom-templates/chpasswd.yaml
+  # OS::TripleO::NodeUserData: /home/stack/custom-templates/chpasswd.yaml
   
 parameter_defaults:
   NeutronBridgeMappings: 'datacentre:br-ex,tenant:br-tenant'
@@ -35,6 +35,7 @@ parameter_defaults:
   ExternalAllocationPools: [{'start': '172.16.81.50', 'end': '172.16.81.100'}]
   # Set to the router gateway on the external network
   ExternalInterfaceDefaultRoute: 172.16.81.254
+  ExternalNetworkVlanID: 81
 
   # Gateway router for the provisioning network (or Undercloud IP)
   ControlPlaneDefaultRoute: 172.16.80.31
