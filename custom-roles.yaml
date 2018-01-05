@@ -21,6 +21,7 @@
 
 - name: Controller
   CountDefault: 1
+  HostnameFormatDefault: '%stackname%-controller-%index%'  
   ServicesDefault:
     - OS::TripleO::Services::CACerts
     - OS::TripleO::Services::CephMon
